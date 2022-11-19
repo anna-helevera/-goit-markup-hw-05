@@ -8,7 +8,8 @@
   --secondary-button-color: #F5F4FA;
   --icon-color: #AFB1B8;
   --icon-background: rgb(255, 255, 255, 0.1);
-
+  --accent-background-project: rgba(33, 150, 243, 0.9);
+  --overlay: rgba(0, 0, 0, 0.2);
 
 }
 
@@ -409,6 +410,28 @@ padding-bottom: 16px;
   margin-right: 30px;
   margin-bottom: 30px;
 }
+.project-team-filter:hover .project-text{
+  transform: translateY(0);
+}
+.project-wrap{
+position: relative;
+overflow: hidden;
+}
+.project-text{
+  position: absolute;
+  top: 0;
+  background-color: var(--accent-background-project);
+  color: var(--primary-color);
+  font-weight: 400;  
+  font-size: 18px;
+  line-height: calc(28/18);
+  letter-spacing: 0.03em;
+  padding: 63px 24px;
+  height: 100%;
+  transform: translateY(100%);
+  transition: transform 300ms linear;
+  overflow: auto;
+}
 .poster{
   display: block;
 }
@@ -460,7 +483,6 @@ padding-bottom: 16px;
 }
 
 .contact {
-  
   color: var(--next-text-color);
   line-height: calc(24/14); 
 }
@@ -514,4 +536,53 @@ justify-content: center;
 .footer-soc-link:hover .footer-soc-icon,
 .footer-soc-link:focus .footer-soc-icon{
   background-color: var(--accent-color);
+}
+.backdrop{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay);
+  transition: opacity 300ms linear, visibility 300ms linear; 
+}
+.modal {
+  position: absolute;
+  width: 528px;
+  min-height: 581px;
+  background-color: var(--primary-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  transition: transform 300ms linear;
+}
+.backdrop.is-hidden .modal{
+  transform: translate(-50%, -50%) scale(0) rotate(-360deg);
+  border-radius: 50%;
+}
+.modal-close{
+  position: absolute;
+  display: flex;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--title-color);
+  right: 8px;
+  top: 8px;
+  cursor: pointer;
+}
+.is-hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  background-color: var(--accent-color);
+  border-color: 0px solid transparent;
+  color: var(--primary-color);
 }
