@@ -126,10 +126,14 @@ img {
     display: flex;
     gap: 10px;
     align-items: center;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); 
   }
   .sav{
     padding-top: 32px;
     padding-bottom: 32px;
+  }
+  .this{
+    color: var(--accent-color); 
   }
   .this::before{
     position: absolute;
@@ -138,7 +142,7 @@ img {
     height: 4px;
     border-radius: 2px;
     background-color: var(--accent-color);
-    bottom: 0;
+    bottom: -1px;
     
   }
   .envelope, .smartphone{
@@ -280,6 +284,7 @@ img {
 .work-text{
   position: absolute;
   bottom: 0;
+  left: 0;
   background-color: rgba(47, 48, 58, 0.8);
   color: var(--primary-color);
   font-weight: 700;
@@ -340,7 +345,7 @@ border-radius: 50%;
 display: flex;
 align-items: center;
 justify-content: center;
-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-link:hover,
 .team-soc-link:focus{
@@ -348,6 +353,7 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), background-color 250ms cubi
 }
 .team-soc-icon{
   fill: var(--icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .team-soc-link:hover .team-soc-icon,
 .team-soc-link:focus .team-soc-icon{
@@ -373,21 +379,22 @@ align-items: center;
 justify-content: center;
 padding-top: 16px;
 padding-bottom: 16px;
-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-soc-link:hover,
 .clients-soc-link:focus{
   border-color: var(--accent-color);
-  
 }
 .clients-soc-icon{
   fill: var(--icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-soc-link:hover .clients-soc-icon,
 .clients-soc-link:focus .clients-soc-icon{
   fill: var(--accent-color);
 }
  /* ------PORTFOLIO SIDE------- */
+
  /* ------FILTER------- */
 .button-team{
   display: flex;
@@ -413,11 +420,13 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-be
   cursor: pointer;
   background: var(--secondary-button-color);
   color: var(--title-color);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .filter-button:hover, 
 .filter-button:focus {
-  background: var(--accent-color);
+  background-color: var(--accent-color);
   color: var(--primary-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
@@ -444,9 +453,8 @@ transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-be
   margin-bottom: 30px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.project-team-filter:hover .project-text{
+.poster:hover .project-text{
   transform: translateY(0);
-  
 }
 .project-wrap{
 position: relative;
@@ -570,12 +578,9 @@ transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .footer-soc-icon{
   fill: var(--primary-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.footer-soc-link:hover .footer-soc-icon,
-.footer-soc-link:focus .footer-soc-icon{
-  background-color: var(--accent-color);
-  
-}
+
 
 /* ------MODALKA-------- */
 
